@@ -26,6 +26,9 @@ var __assign = (this && this.__assign) || function () {
 };
 // ************ INTRO ************* //
 var a = "1";
+// Official Docs: https://www.typescriptlang.org/
+// Confirm you have node installed
+// npm install -g typescript
 // Run tsc name_of_file
 // Example of error
 // because myfunc is not a method on a
@@ -54,18 +57,6 @@ var getFullName = function (firstName, lastName) {
 console.log(getFullName("Dale", "Cooper"));
 // This doesn't due to type not matching
 console.log(getFullName("Hiro", "Ono"));
-// console.log(getFullName());
-// ************ INTERFACES ************* //
-// Properties in interface are required/mandatory by default
-// to override this, we use ?
-// age is now optional
-// prefix or postfix interface with an I to distinguish from class or function constructors
-// IUser or UserInterface naming convention
-// interface UserInterface {
-// 	name: string;
-// 	age?: number;
-// 	getMessage(): string
-// }
 // const user: UserInterface = {
 // 	name: 'Dale',
 // 	age: undefined,
@@ -94,7 +85,8 @@ var pageNumber = 1;
 var errorMessage = null;
 var popularTags = ["anime", "games", "film"];
 var profile = null;
-// GOT HERE ************ any, never, void, and unknown types ************* //
+// ************ any, never, void, and unknown types ************* //
+// GOT HERE
 // void
 // When we don't return something the return is void
 // Is a set of undefined and null

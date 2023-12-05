@@ -1,6 +1,9 @@
 // ************ INTRO ************* //
 const a = "1";
 
+// Official Docs: https://www.typescriptlang.org/
+// Confirm you have node installed
+// npm install -g typescript
 // Run tsc name_of_file
 
 // Example of error
