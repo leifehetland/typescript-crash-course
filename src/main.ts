@@ -53,17 +53,20 @@ console.log(getFullName("Hiro", "Ono"));
 // IUser or UserInterface naming convention
 interface UserInterface {
 	name: string;
-	age?: number;
+	age: number;
 	getMessage(): string
 }
 
-// const user: UserInterface = {
-// 	name: 'Dale',
-// 	age: undefined,
-// 	getMessage() {
-// 		return "Hello" + this.name;
-// 	}
-// }
+const user: UserInterface = {
+	name: 'Dale',
+	age: undefined,
+	getMessage() {
+		return "Hello" + this.name;
+	}
+}
+
+console.log(user.age);
+
 
 // Typescript understands our objs by default
 // const user: {name: string, age: number} = {
@@ -72,12 +75,15 @@ interface UserInterface {
 // }
 
 // This errors out due to lack of age property
-// const user2: {name: string, age?: number} = {
-//     name: 'Hiro'
-// }
+const user2: {name: string, age?: number} = {
+    name: 'Hiro'
+}
 
-// // Helps with autocomplete
-// // and if you typo, it will suggest similar property names on hover
+console.log(user2.name);
+
+
+// Helps with autocomplete
+// and if you typo, it will suggest similar property names on hover
 // console.log(user.name);
 
 // ************ UNION OPERATOR & TYPE ALIASES ************* //
@@ -153,17 +159,17 @@ let numericHouseNumber: number = (houseNumber as unknown) as number;
 // ************ WORKING WITH DOM ************* //
 // TS doesn't know anything about our markup
 // Use as to define the correct type of our DOM elements
-const someElement = document.querySelector(".foo") as HTMLInputElement;
+// const someElement = document.querySelector(".foo") as HTMLInputElement;
 
 // We don't get an error on .value due to telling the querySelector we are selecting an HTMLInputElement
-console.log("someElement", someElement.value);
+// console.log("someElement", someElement.value);
 
 // Event Listeners
-someElement.addEventListener('blur', (event) => {
-	const target = event.target as HTMLInputElement;
-	console.log("event", target.value);
+// someElement.addEventListener('blur', (event) => {
+// 	const target = event.target as HTMLInputElement;
+// 	console.log("event", target.value);
 
-})
+// })
 
 // ************ CLASSES IN TYPESCRIPT ************* //
 

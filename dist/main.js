@@ -57,24 +57,26 @@ var getFullName = function (firstName, lastName) {
 console.log(getFullName("Dale", "Cooper"));
 // This doesn't due to type not matching
 console.log(getFullName("Hiro", "Ono"));
-// const user: UserInterface = {
-// 	name: 'Dale',
-// 	age: undefined,
-// 	getMessage() {
-// 		return "Hello" + this.name;
-// 	}
-// }
+var user = {
+    name: 'Dale',
+    age: undefined,
+    getMessage: function () {
+        return "Hello" + this.name;
+    }
+};
+console.log(user.age);
 // Typescript understands our objs by default
 // const user: {name: string, age: number} = {
 //     name: 'Dale',
 //     age: 33
 // }
 // This errors out due to lack of age property
-// const user2: {name: string, age?: number} = {
-//     name: 'Hiro'
-// }
-// // Helps with autocomplete
-// // and if you typo, it will suggest similar property names on hover
+var user2 = {
+    name: 'Hiro'
+};
+console.log(user2.name);
+// Helps with autocomplete
+// and if you typo, it will suggest similar property names on hover
 // console.log(user.name);
 // ************ UNION OPERATOR & TYPE ALIASES ************* //
 var username = "Sarah";
@@ -117,19 +119,6 @@ var houseNumber = "4565";
 // let numericHouseNumber: number = houseNumber as number;
 // Works
 var numericHouseNumber = houseNumber;
-// console.log(vUnknown.foo());
-// Type Assertion
-// ************ WORKING WITH DOM ************* //
-// TS doesn't know anything about our markup
-// Use as to define the correct type of our DOM elements
-var someElement = document.querySelector(".foo");
-// We don't get an error on .value due to telling the querySelector we are selecting an HTMLInputElement
-console.log("someElement", someElement.value);
-// Event Listeners
-someElement.addEventListener('blur', function (event) {
-    var target = event.target;
-    console.log("event", target.value);
-});
 // By enforcing an interface on the class
 // it must have a getFullName method
 var User = /** @class */ (function () {
