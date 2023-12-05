@@ -88,7 +88,6 @@ var errorMessage = null;
 var popularTags = ["anime", "games", "film"];
 var profile = null;
 // ************ any, never, void, and unknown types ************* //
-// GOT HERE
 // void
 // When we don't return something the return is void
 // Is a set of undefined and null
@@ -131,6 +130,7 @@ var User = /** @class */ (function () {
         return this.firstName + ' ' + this.lastName;
     };
     // A static readonly property that is accessible on the class not the obj
+    // Example console.log(User.maxAge)
     User.maxAge = 50;
     return User;
 }());
@@ -159,6 +159,7 @@ var userAcct = new User("Dale", "Cooper");
 // ************ GENERICS IN TYPESCRIPT ************* //
 // All generic data types are written inside <>
 // extends object enforces that argument must be an object
+// Big T is a default name for a generic
 var addId = function (obj) {
     var id = Math.random().toString(16);
     return __assign(__assign({}, obj), { id: id });
@@ -198,5 +199,6 @@ var StatusEnum;
     StatusEnum["Done"] = "done";
 })(StatusEnum || (StatusEnum = {}));
 var notStartedStatus = StatusEnum.NotStarted;
+console.log(notStartedStatus);
 // Values start at 0 and count up
-console.log(StatusEnum.InProgress);
+// console.log(StatusEnum.InProgress);

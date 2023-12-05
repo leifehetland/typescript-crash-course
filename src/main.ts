@@ -114,7 +114,6 @@ const popularTags: ID[] = ["anime", "games", "film"]
 let profile: ProfileInterface | null = null;
 
 // ************ any, never, void, and unknown types ************* //
-// GOT HERE
 // void
 // When we don't return something the return is void
 // Is a set of undefined and null
@@ -184,6 +183,7 @@ class User implements IUser {
 	private lastName: string
 	readonly unchangeableFact: string
 	// A static readonly property that is accessible on the class not the obj
+	// Example console.log(User.maxAge)
 	static readonly maxAge: number = 50
 
 	constructor(firstName: string, lastName: string) {
@@ -225,6 +225,7 @@ const userAcct = new User("Dale", "Cooper")
 // ************ GENERICS IN TYPESCRIPT ************* //
 // All generic data types are written inside <>
 // extends object enforces that argument must be an object
+// Big T is a default name for a generic
 const addId = <T extends object>(obj: T) => {
 	const id = Math.random().toString(16)
 
@@ -287,6 +288,8 @@ interface Task {
 }
 
 let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
+
+console.log(notStartedStatus);
 
 // Values start at 0 and count up
 console.log(StatusEnum.InProgress);
