@@ -45,7 +45,7 @@ console.log(getFullName("Hiro", "Ono"));
 
 
 // ************ INTERFACES ************* //
-// Properties in interface are required/mandatory by default
+// Properties in an interface are required/mandatory by default
 // to override this, we use ?
 // age is now optional
 
